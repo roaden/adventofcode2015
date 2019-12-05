@@ -14,12 +14,9 @@ def getDimensions(foo):
 
 #get the ribbon size. Gonna be 2*small side + 2*med side + small*med*large.
 def getRibbon(present):
-    sides = []
-    sides.append(present[0]*present[1])
-    sides.append(present[0]*present[2])
-    sides.append(present[1]*present[2])
+    sides = present
     sides.sort()
-    return 2*present[0] + 2*present[1] + present[0]*present[1]*present[2]
+    return 2*sides[0] + 2*sides[1] + sides[0]*sides[1]*sides[2]
 
 for line in fin:
     presents.append(getDimensions(line))
